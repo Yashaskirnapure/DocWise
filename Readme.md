@@ -43,7 +43,7 @@
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/docwise.git
+git clone https://github.com/Yashaskirnapure/DocWise.git
 cd docwise
 source .venv/bin/activate
 pip install -r requirements.txt

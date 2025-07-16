@@ -51,32 +51,31 @@ def parse_json(json_path):
     return { 'images': images, 'text': text, 'image_text': image_text }
 
 
-def get_description(images, text, image_text, context_window=2):
+def get_description(images, text, image_text):
     image_captions = {}
 
-    text_ids = sorted(text.keys(), key=lambda x: int(x) if str(x).isdigit() else float('inf'))
+    available_text_ids = set(text.keys())
 
     for img_id in images:
-        caption = image_text.get(img_id, {}).get('content', '')
-        img_path = images[img_id]['reference']
-        img_desc = ""
+        img_txt = image_text.get(img_id, {}).get("content", "")
+        text_desc = ""
 
-        try:
-            idx = text_ids.index(img_id)
-        except ValueError:
-            idx = -1
+        prev_id = img_id - 1
+        while prev_id not in available_text_ids and prev_id >= 0:
+            prev_id -= 1
+        if prev_id in text:
+            text_desc += text[prev_id]['content'] + " "
 
-        if idx != -1:
-            before = text_ids[max(0, idx - context_window): idx]
-            after = text_ids[idx + 1: idx + 1 + context_window]
-
-            for tid in before + after:
-                img_desc += " " + text[tid].get('content', '')
+        next_id = img_id + 1
+        while next_id not in available_text_ids and next_id <= max(available_text_ids):
+            next_id += 1
+        if next_id in text:
+            text_desc += text[next_id]['content']
 
         image_captions[img_id] = {
-            "filePath": img_path,
-            "image_text": caption,
-            "description": img_desc.strip()
+            "filePath": images[img_id]["reference"],
+            "image_text": img_txt,
+            "description": text_desc.strip()
         }
 
     return image_captions

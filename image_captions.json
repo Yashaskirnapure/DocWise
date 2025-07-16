@@ -1,1 +1,12 @@
-{}
+{
+  "698": {
+    "filePath": "figures/fileoutpart0.png",
+    "image_text": "",
+    "description": "Usage and recurring charges for this statement period will be charged on your next billing date. Estimated charges shown on this page, or shown on any notifications that we send to you, may differ from your actual charges for this statement period. This is because estimated charges presented on this page do not include usage charges accrued during this statement period after the date you view this page. Similarly, information about estimated charges sent to you in a notification do not include usage charges accrued during this statement period after the date we send you the notification. One-time fees and subscription charges are assessed separately from usage and reoccurring charges, on the date that they occur. The charges on this page exclude taxes, unless it is listed as a separate line item. To access your tax information, contact your AWS Organization’s management owner.  Jul 1 - Jul 31, 2025"
+  },
+  "701": {
+    "filePath": "figures/fileoutpart1.png",
+    "image_text": "",
+    "description": "Billing period Account ID 436456729677 Bill status Date printed Pending Jul 6, 2025  AWS estimated bill summary"
+  }
+}

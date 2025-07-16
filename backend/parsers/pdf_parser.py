@@ -35,7 +35,7 @@ class PDFParser:
 
             extract_pdf_params = ExtractPDFParams(
                 elements_to_extract=[ExtractElementType.TEXT],
-                elements_to_extract_renditions=[ExtractRenditionsElementType.FIGURES]
+                elements_to_extract_renditions=[ExtractRenditionsElementType.FIGURES, ExtractRenditionsElementType.TABLES]
             )
 
             extract_pdf_job = ExtractPDFJob(input_asset=input_asset, extract_pdf_params=extract_pdf_params)

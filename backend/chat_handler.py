@@ -26,6 +26,7 @@ def handle_user_query(prompt: str, messages: str, vector_chain, summary):
     query_type = classify_query(prompt)
 
     if query_type == "summary":
+        print("summary")
         return summary, []
 
     text_context_docs = vector_chain.retriever.get_relevant_documents(prompt)
@@ -38,10 +39,8 @@ def handle_user_query(prompt: str, messages: str, vector_chain, summary):
     response = vector_chain.invoke(prompt_input)
     text_response = response['answer']
 
-    validated_images = []
-    if not should_skip_images:
-        image_query = generate_image_query(prompt, text_response)
-        raw_images = retrieve_similar_images(image_query)
-        validated_images = validate_images(prompt, text_response, raw_images)
+    image_query = generate_image_query(prompt, text_response)
+    raw_images = retrieve_similar_images(image_query)
+    validated_images = validate_images(prompt, text_response, raw_images)
 
     return text_response, validated_images

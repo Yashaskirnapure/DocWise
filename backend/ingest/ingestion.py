@@ -27,7 +27,6 @@ def ingest_document(uploaded_file):
 
     if os.path.exists(extract_path):
         shutil.rmtree(extract_path)
-    os.makedirs(extract_path, exist_ok=True)
 
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(extract_path)

@@ -1,15 +1,15 @@
-# 📄 DocWise: Intelligent Document Q&A Assistant
+# DocWise: Context-Aware Q&A Assistant
 
 **DocWise** is a smart, RAG-based assistant that lets users interact with complex PDF documents through natural language. It combines document parsing, vector-based retrieval, and LLM-powered generation to answer queries, summarize content, and display relevant visual elements like figures and diagrams.
 
 ## Features
 
-- 🧠 **Retrieval-Augmented Generation (RAG)**: Combines vector similarity search with LLMs for accurate, grounded answers.
-- 🗃️ **PDF Parsing**: Extracts structured text, images, tables, and metadata from uploaded documents.
-- 💬 **Dual Mode Query Handling**: Determines if a question requires summarization or detailed retrieval.
-- 🖼️ **Visual Context**: Retrieves and validates figures/diagrams relevant to the user's question.
-- ⚡ **Fast and Modular**: Uses LangChain, OpenAI GPT-4o, and Qdrant for scalable performance.
-- 🌐 **Streamlit Frontend**: Clean and interactive interface for document uploads and chatting.
+- **Retrieval-Augmented Generation (RAG)**: Combines vector similarity search with LLMs for accurate, grounded answers.
+- **PDF Parsing**: Extracts structured text, images, tables, and metadata from uploaded documents.
+- **Dual Mode Query Handling**: Determines if a question requires summarization or detailed retrieval.
+- **Visual Context**: Retrieves and validates figures/diagrams relevant to the user's question.
+- **Fast and Modular**: Uses LangChain, OpenAI GPT-4o, and Qdrant for scalable performance.
+- **Streamlit Frontend**: Clean and interactive interface for document uploads and chatting.
 
 
 ## Architecture
